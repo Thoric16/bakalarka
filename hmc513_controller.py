@@ -13,9 +13,11 @@ class DeviceController:
         
         self.ser = None
         self.is_running = True
+        self.min_freq_mhz = 10300
+        self.max_freq_mhz = 11500
         
         # State Variables
-        self.ch1_val = tk.IntVar(value=10200)
+        self.ch1_val = tk.IntVar(value=self.min_freq_mhz)
         self.ch2_val = tk.IntVar(value=10600)
         
         self.setup_gui()
@@ -90,13 +92,25 @@ class DeviceController:
         
         return f"#{base_cmd}{checksum:02d}"
 
+    def clamp_frequency(self, freq):
+        return max(self.min_freq_mhz, min(self.max_freq_mhz, freq))
+
+    def validate_frequency(self, freq):
+        if freq < self.min_freq_mhz or freq > self.max_freq_mhz:
+            messagebox.showwarning(
+                "Frequency limit",
+                f"Frequency must be between {self.min_freq_mhz / 1000:.3f} GHz and {self.max_freq_mhz / 1000:.3f} GHz."
+            )
+            return False
+        return True
+
     def step_value(self, channel, amount):
         if channel == 1:
-            new_val = self.ch1_val.get() + amount
+            new_val = self.clamp_frequency(self.ch1_val.get() + amount)
             self.ch1_val.set(new_val)
             self.send_channel(1)
         else:
-            new_val = self.ch2_val.get() + amount
+            new_val = self.clamp_frequency(self.ch2_val.get() + amount)
             self.ch2_val.set(new_val)
             self.send_channel(2)
 
@@ -106,6 +120,16 @@ class DeviceController:
             return
             
         val = self.ch1_val.get() if channel == 1 else self.ch2_val.get()
+        if not self.validate_frequency(val):
+            val = self.clamp_frequency(val)
+            if channel == 1:
+                self.ch1_val.set(val)
+            else:
+                self.ch2_val.set(val)
+            self.log_terminal(
+                f"SYSTEM: Value out of range, clamped to {val} MHz.",
+                "sys"
+            )
         cmd_str = self.generate_command(channel, val)
         self.send_serial(cmd_str)
 
