@@ -2,3 +2,4 @@
 -IQ modulator HMC521
 -https://gemini.google.com/share/0a1c4b13d5b5 gemini chat about: We detailed how to design a clean, impedance-matched 11 GHz RF link using the HMC521LC4 mixer, covering everything from power budget calculations and safe DC injection to interfacing microcontrollers with op-amps and selecting noise-free linear power supplies
 -LM27762 Low-Noise Positive and Negative Output Integrated Charge Pump Plus LDO 
+-possible consultation doc. Dr. Ing. Pavel Kovář
