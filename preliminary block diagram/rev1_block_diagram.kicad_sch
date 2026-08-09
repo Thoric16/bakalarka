@@ -1748,10 +1748,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "257ef669-f6d1-4a95-9066-6030b836cfac")
 		(property "Reference" "SW1"
-			(at 198.12 81.28 0)
+			(at 198.374 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1764,6 +1763,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Button_Switch_SMD:Nidec_Copal_CAS-120A"
@@ -1974,7 +1974,7 @@
 				)
 			)
 		)
-		(property "Value" "????"
+		(property "Value" "LNA"
 			(at 220.218 102.108 0)
 			(effects
 				(font
@@ -2042,7 +2042,7 @@
 				)
 			)
 		)
-		(property "Value" "BP 10-12GHz????"
+		(property "Value" "BP 10-12GHz"
 			(at 220.98 72.39 0)
 			(effects
 				(font
@@ -2180,7 +2180,7 @@
 				)
 			)
 		)
-		(property "Value" "????"
+		(property "Value" "PA"
 			(at 242.57 76.2 0)
 			(effects
 				(font
@@ -2314,7 +2314,7 @@
 				)
 			)
 		)
-		(property "Value" "HMC451?"
+		(property "Value" "HMC451"
 			(at 92.71 83.82 0)
 			(effects
 				(font
@@ -2382,8 +2382,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LP????"
-			(at 170.18 129.032 90)
+		(property "Value" "LP"
+			(at 166.37 129.032 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2447,24 +2447,23 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "b88e28c4-7e02-471d-9f37-5a1771befd17")
 		(property "Reference" "FL1"
-			(at 129.54 126.9999 90)
+			(at 124.968 127.254 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "LP????"
-			(at 129.54 129.5399 90)
+		(property "Value" "LP"
+			(at 125.73 129.794 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Filter:Filter_Mini-Circuits_FV1206"
@@ -2612,7 +2611,7 @@
 				)
 			)
 		)
-		(property "Value" "BP 10-12GHz????"
+		(property "Value" "BP 10-12GHz"
 			(at 243.84 95.25 0)
 			(effects
 				(font
