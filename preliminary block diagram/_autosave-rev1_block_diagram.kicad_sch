@@ -2595,7 +2595,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "10dB"
+		(property "Value" "AT0904AS-1000JN-91TR"
 			(at 86.36 85.09 0)
 			(effects
 				(font
@@ -2603,7 +2603,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Converter:RF_Attenuator_Susumu_PAT1220"
+		(property "Footprint" ""
 			(at 86.36 92.71 0)
 			(effects
 				(font
@@ -2612,7 +2612,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.susumu.co.jp/common/pdf/n_catalog_partition16_en.pdf"
+		(property "Datasheet" "https://cz.mouser.com/en/ProductDetail/Vishay-Barry-Industries/AT0904AS-1000JN-91TR?qs=ulEaXIWI0c9CMXIQQzzR1g%3D%3D"
 			(at 80.01 86.36 0)
 			(effects
 				(font
@@ -2622,7 +2622,24 @@
 			)
 		)
 		(property "Description" "Pout=(10;11.6)dBm"
-			(at 87.122 102.108 0)
+			(at 87.884 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field5" ""
+			(at 86.36 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field6" "L=10dB"
+			(at 82.042 102.108 0)
 			(effects
 				(font
 					(size 1.27 1.27)
