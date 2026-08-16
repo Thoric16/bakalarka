@@ -5,6 +5,167 @@
 	(uuid "68f5fdcf-31cf-48a9-a913-768bb1b3af2f")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:Conn_Coaxial_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0.254 3.048 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_Coaxial_Small"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_Coaxial_Small_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Conn_Coaxial_Small_1_1"
+				(arc
+					(start 1.3484 0.0039)
+					(mid 0.327 -1.308)
+					(end -1.1916 -0.6311)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.1916 0.6311)
+					(mid 0.327 1.3081)
+					(end 1.3484 -0.0039)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.27)
+					(name "In"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.27)
+					(name "Ext"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:Antenna"
 			(pin_numbers
 				(hide yes)
@@ -1741,6 +1902,16 @@
 		)
 		(uuid 25199929-dafb-4e1a-99d6-fcabae49da97)
 	)
+	(text "RO4350B 0.51 mm (20 mil) PCB\n"
+		(exclude_from_sim no)
+		(at 210.82 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "13780ae5-1ee5-49ce-8d76-fe4466cbf6dd")
+	)
 	(text "HMC1056"
 		(exclude_from_sim no)
 		(at 106.68 73.66 0)
@@ -2030,9 +2201,10 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "???"
+		(property "Value" "~"
 			(at 198.12 83.82 0)
 			(effects
 				(font
@@ -2041,7 +2213,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:Nidec_Copal_CAS-120A"
+		(property "Footprint" ""
 			(at 198.12 100.33 0)
 			(effects
 				(font
@@ -2050,7 +2222,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.nidec-components.com/e/catalog/switch/cas.pdf"
+		(property "Datasheet" "https://cz.mouser.com/datasheet/3/829/1/MASW-008322.pdf"
 			(at 198.12 97.79 0)
 			(effects
 				(font
@@ -2059,13 +2231,20 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Switch, single pole double throw"
-			(at 198.12 90.17 0)
+		(property "Description" "MASW-008322-TR1000"
+			(at 199.39 95.758 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
+			)
+		)
+		(property "Field5" "L=1dB"
+			(at 197.866 98.044 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -2103,6 +2282,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Value" "Antenna"
@@ -2247,6 +2427,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "LNA"
@@ -2266,7 +2447,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://cz.mouser.com/en/ProductDetail/MACOM/MAAL-011130-TR3000?qs=byeeYqUIh0Mgo6fB7YXTZg%3D%3D"
 			(at 223.52 110.49 0)
 			(effects
 				(font
@@ -2275,13 +2456,20 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "MAAL-011130-TR3000"
 			(at 223.52 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
+			)
+		)
+		(property "Field5" "G=21dB@10GHz"
+			(at 220.218 113.284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -2315,6 +2503,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "BP 8-12GHz"
@@ -2371,6 +2560,89 @@
 		)
 	)
 	(symbol
+		(lib_id "custom_rf_symbols:Amplifier")
+		(at 241.3 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7b694aa4-7df8-445c-acb9-5a6cf364e110")
+		(property "Reference" "U36"
+			(at 242.57 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "HMC451"
+			(at 242.57 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 241.3 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "G=18dB"
+			(at 239.522 88.392 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field5" "Psat=21.6dBm@5.5V"
+			(at 245.618 90.424 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field6" "Psat=20dBm@5V@16GHz"
+			(at 247.65 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "9e2fd106-ad9e-493b-bcb7-262efe18378b")
+		)
+		(pin "1"
+			(uuid "7ae40bda-6f9d-4176-86ab-3c0af9cc0e68")
+		)
+		(instances
+			(project "preliminary block diagram"
+				(path "/0b61a76d-2d09-44e4-b8e3-89709cafea27/32a8c150-5b91-45e6-a88c-e22f86ba438b"
+					(reference "U36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Antenna")
 		(at 260.35 77.47 0)
 		(unit 1)
@@ -2387,6 +2659,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Value" "Antenna"
@@ -2432,74 +2705,6 @@
 			(project "preliminary block diagram"
 				(path "/0b61a76d-2d09-44e4-b8e3-89709cafea27/32a8c150-5b91-45e6-a88c-e22f86ba438b"
 					(reference "AE1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "custom_rf_symbols:Amplifier")
-		(at 241.3 77.47 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "87e74141-cc42-41a1-b972-e52c8afa7277")
-		(property "Reference" "U30"
-			(at 242.57 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PA"
-			(at 242.57 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 241.3 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 241.3 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 241.3 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "5ff031fd-4a89-42a6-a1af-69335f8b062d")
-		)
-		(pin "1"
-			(uuid "16042a7d-0b7b-4920-9dc7-06953b56577c")
-		)
-		(instances
-			(project "preliminary block diagram"
-				(path "/0b61a76d-2d09-44e4-b8e3-89709cafea27/32a8c150-5b91-45e6-a88c-e22f86ba438b"
-					(reference "U30")
 					(unit 1)
 				)
 			)
@@ -2595,7 +2800,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "10dB"
+		(property "Value" "AT0904AS-1000JN-91TR"
 			(at 86.36 85.09 0)
 			(effects
 				(font
@@ -2603,7 +2808,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RF_Converter:RF_Attenuator_Susumu_PAT1220"
+		(property "Footprint" ""
 			(at 86.36 92.71 0)
 			(effects
 				(font
@@ -2612,7 +2817,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.susumu.co.jp/common/pdf/n_catalog_partition16_en.pdf"
+		(property "Datasheet" "https://cz.mouser.com/en/ProductDetail/Vishay-Barry-Industries/AT0904AS-1000JN-91TR?qs=ulEaXIWI0c9CMXIQQzzR1g%3D%3D"
 			(at 80.01 86.36 0)
 			(effects
 				(font
@@ -2622,7 +2827,24 @@
 			)
 		)
 		(property "Description" "Pout=(10;11.6)dBm"
-			(at 87.122 102.108 0)
+			(at 87.884 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Field5" ""
+			(at 86.36 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Field6" "L=10dB"
+			(at 82.042 102.108 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2662,6 +2884,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "HMC451"
@@ -2880,6 +3103,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_Coaxial_Small")
+		(at 212.09 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c68a9ba3-0778-4208-bb1d-921953545789")
+		(property "Reference" "J1"
+			(at 211.5704 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "142-0761-821"
+			(at 212.09 134.366 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 212.09 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://cz.mouser.com/en/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0761-821?qs=KmQR6Yc%252BszUNTpdqd2n2zQ%3D%3D"
+			(at 212.09 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SMA"
+			(at 212.6096 132.334 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "a673dadf-f48f-475c-afcc-52d31d6d405c")
+		)
+		(pin "1"
+			(uuid "3acb6b4e-6ef0-40e3-b762-f8b3aefbcf97")
+		)
+		(instances
+			(project "preliminary block diagram"
+				(path "/0b61a76d-2d09-44e4-b8e3-89709cafea27/32a8c150-5b91-45e6-a88c-e22f86ba438b"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "custom_rf_symbols:Mixer")
 		(at 138.43 82.55 0)
 		(unit 1)
@@ -2966,7 +3256,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d03cdb04-9863-459e-8977-7e78c4b4149d")
 		(property "Reference" "FL4"
 			(at 243.84 92.71 0)
@@ -2974,10 +3263,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "BP 8-12GHz"
-			(at 243.84 95.25 0)
+			(at 244.602 115.062 0)
 			(effects
 				(font
 					(size 1.27 1.27)
