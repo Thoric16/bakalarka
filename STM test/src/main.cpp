@@ -1,70 +1,95 @@
 #include <Arduino.h>
-#include "arduinoFFT.h"
 
-#define SAMPLES 128             // Must be a power of 2
-#define SAMPLING_FREQ 2000      // Sampling frequency in Hz (Nyquist limit: 1000 Hz)
-#define ANALOG_PIN A0
+constexpr uint8_t DAC_I_PIN = PA4;
+constexpr uint8_t DAC_Q_PIN = PA5;
+constexpr uint8_t USER_BUTTON_PIN = PC13;
+constexpr uint16_t DAC_MAX = 4095;
+constexpr uint32_t SYMBOL_PERIOD_US = 100;
 
-double vReal[SAMPLES];
-double vImag[SAMPLES];
+struct Modulation {
+  const char *name;
+  uint16_t order;
+  uint8_t bitsPerAxis;
+};
 
-ArduinoFFT<double> FFT = ArduinoFFT<double>(vReal, vImag, SAMPLES, SAMPLING_FREQ);
-unsigned int sampling_period_us;
+const Modulation modulations[] = {
+  {"QPSK", 4, 1},
+  {"16-QAM", 16, 2},
+  {"64-QAM", 64, 3},
+  {"256-QAM", 256, 4},
+  {"1024-QAM", 1024, 5},
+  {"4096-QAM", 4096, 6}
+};
+
+constexpr size_t MODULATION_COUNT = sizeof(modulations) / sizeof(modulations[0]);
+size_t modulationIndex = 0;
+uint16_t symbolIndex = 0;
+bool previousButtonState = HIGH;
+uint32_t lastButtonChange = 0;
+uint32_t lastSymbolTime = 0;
+
+uint16_t axisLevel(uint16_t axisIndex, uint8_t bitsPerAxis) {
+  const uint16_t axisLevels = 1U << bitsPerAxis;
+  if (axisLevels == 1) {
+    return DAC_MAX / 2;
+  }
+  return static_cast<uint16_t>((static_cast<uint32_t>(axisIndex) * DAC_MAX) / (axisLevels - 1));
+}
+
+void printModulationInfo() {
+  const Modulation &modulation = modulations[modulationIndex];
+  Serial.println();
+  Serial.println("--- QAM generator ---");
+  Serial.print("Current modulation: ");
+  Serial.println(modulation.name);
+  Serial.print("States: ");
+  Serial.println(modulation.order);
+  Serial.print("Bits per symbol: ");
+  Serial.println(2 * modulation.bitsPerAxis);
+  Serial.print("DAC pins: I=PA4, Q=PA5, range=0.. ");
+  Serial.println(DAC_MAX);
+  Serial.println("Press the blue USER button to change modulation.");
+}
+
+void checkButton() {
+  const bool buttonState = digitalRead(USER_BUTTON_PIN);
+  const uint32_t now = millis();
+  if (buttonState != previousButtonState && now - lastButtonChange >= 40) {
+    previousButtonState = buttonState;
+    lastButtonChange = now;
+    if (buttonState == LOW) {
+      modulationIndex = (modulationIndex + 1) % MODULATION_COUNT;
+      symbolIndex = 0;
+      printModulationInfo();
+    }
+  }
+}
 
 void setup() {
   Serial.begin(115200);
-  pinMode(ANALOG_PIN, INPUT);
-  sampling_period_us = round(1000000.0 * (1.0 / SAMPLING_FREQ));
+  pinMode(DAC_I_PIN, OUTPUT);
+  pinMode(DAC_Q_PIN, OUTPUT);
+  pinMode(USER_BUTTON_PIN, INPUT_PULLUP);
+  analogWriteResolution(12);
+  printModulationInfo();
 }
 
 void loop() {
-  // 1. Sample ADC on pin A0
-  for (int i = 0; i < SAMPLES; i++) {
-    unsigned long start_time = micros();
-    vReal[i] = analogRead(ANALOG_PIN);
-    vImag[i] = 0; // Imaginary part is 0 for real signals
+  checkButton();
 
-    while ((micros() - start_time) < sampling_period_us) {
-      // Wait for exact sampling window
+  if (micros() - lastSymbolTime >= SYMBOL_PERIOD_US) {
+    lastSymbolTime = micros();
+    const Modulation &modulation = modulations[modulationIndex];
+    const uint16_t axisLevels = 1U << modulation.bitsPerAxis;
+    const uint16_t iIndex = symbolIndex % axisLevels;
+    const uint16_t qIndex = symbolIndex / axisLevels;
+
+    analogWrite(DAC_I_PIN, axisLevel(iIndex, modulation.bitsPerAxis));
+    analogWrite(DAC_Q_PIN, axisLevel(qIndex, modulation.bitsPerAxis));
+
+    symbolIndex++;
+    if (symbolIndex >= modulation.order) {
+      symbolIndex = 0;
     }
   }
-
-  // 2. Apply Windowing and Compute FFT
-  FFT.windowing(FFTWindow::Hamming, FFTDirection::Forward);
-  FFT.compute(FFTDirection::Forward);
-  FFT.complexToMagnitude();
-
-  // 3. Find Dominant Peak Frequency
-  double peakFrequency = FFT.majorPeak();
-
-  // 4. Print Spectrum to Serial Monitor
-  Serial.println("\n--- FFT Spectrum Analysis ---");
-  Serial.print("Dominant Peak: ");
-  Serial.print(peakFrequency, 1);
-  Serial.println(" Hz");
-  Serial.println("Freq (Hz) | Magnitude");
-
-  // Loop through bins (skip bin 0 = DC offset)
-  for (int i = 1; i < (SAMPLES / 2); i++) {
-    double freq = (i * 1.0 * SAMPLING_FREQ) / SAMPLES;
-    
-    // Print frequency label
-    if (freq < 100) Serial.print(" ");
-    Serial.print((int)freq);
-    Serial.print(" Hz   | ");
-
-    // Print magnitude value
-    Serial.print((int)vReal[i]);
-    Serial.print("\t");
-
-    // Draw ASCII bar for visual feedback
-    int barLength = map((int)vReal[i], 0, 2000, 0, 40);
-    barLength = constrain(barLength, 0, 40);
-    for (int b = 0; b < barLength; b++) {
-      Serial.print("=");
-    }
-    Serial.println();
-  }
-
-  delay(400);
 }
