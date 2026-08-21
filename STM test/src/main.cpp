@@ -13,8 +13,9 @@ constexpr uint32_t SYMBOL_PERIOD_US = 1000;
 constexpr uint32_t CLOCK_FREQUENCY_HZ = 1000000UL / SYMBOL_PERIOD_US;
 constexpr uint32_t BUTTON_DEBOUNCE_MS = 50;
 constexpr uint32_t LONG_PRESS_MS = 1500;
-constexpr uint32_t RX_PRINT_INTERVAL_MS = 100;
 constexpr float ADC_REFERENCE_VOLTAGE = 3.3f;
+constexpr uint8_t RX_PACKET_HEADER = 0xA5;
+constexpr uint16_t RX_BUFFER_SIZE = 512;
 
 struct Modulation {
   const char *name;
@@ -39,11 +40,16 @@ bool candidateButtonState = HIGH;
 uint32_t buttonStateChangedAt = 0;
 uint32_t buttonPressStart = 0;
 bool longPressHandled = false;
-uint32_t lastRxPrint = 0;
 bool receiverMode = false;
-volatile uint16_t receivedI = 0;
-volatile uint16_t receivedQ = 0;
-volatile bool newReceivedSymbol = false;
+struct RxSample {
+  uint16_t i;
+  uint16_t q;
+};
+
+volatile RxSample rxBuffer[RX_BUFFER_SIZE];
+volatile uint16_t rxBufferHead = 0;
+volatile uint16_t rxBufferTail = 0;
+volatile uint32_t rxDroppedSamples = 0;
 HardwareTimer *txClockTimer = nullptr;
 
 uint16_t axisLevel(uint16_t axisIndex, uint8_t bitsPerAxis) {
@@ -74,15 +80,25 @@ void printModulationInfo() {
 }
 
 void receiveClockEdge() {
-  receivedI = analogRead(ADC_I_PIN);
-  receivedQ = analogRead(ADC_Q_PIN);
-  newReceivedSymbol = true;
+  const uint16_t nextHead = (rxBufferHead + 1) % RX_BUFFER_SIZE;
+  if (nextHead == rxBufferTail) {
+    rxDroppedSamples++;
+    return;
+  }
+
+  rxBuffer[rxBufferHead].i = analogRead(ADC_I_PIN);
+  rxBuffer[rxBufferHead].q = analogRead(ADC_Q_PIN);
+  rxBufferHead = nextHead;
 }
 
 void setMode(bool newReceiverMode) {
   receiverMode = newReceiverMode;
   symbolIndex = 0;
-  newReceivedSymbol = false;
+  noInterrupts();
+  rxBufferHead = 0;
+  rxBufferTail = 0;
+  rxDroppedSamples = 0;
+  interrupts();
 
   if (receiverMode) {
     txClockTimer->pause();
@@ -101,24 +117,65 @@ void setMode(bool newReceiverMode) {
   printModulationInfo();
 }
 
-void printReceivedVoltage() {
-  uint16_t currentI;
-  uint16_t currentQ;
-  noInterrupts();
-  currentI = receivedI;
-  currentQ = receivedQ;
-  newReceivedSymbol = false;
-  interrupts();
+void streamReceivedSamples() {
+  uint8_t streamedSamples = 0;
+  while (streamedSamples < 32) {
+    uint16_t currentI;
+    uint16_t currentQ;
 
-  Serial.print("RX edge: I raw=");
-  Serial.print(currentI);
-  Serial.print(" (");
-  Serial.print(currentI * ADC_REFERENCE_VOLTAGE / DAC_MAX, 3);
-  Serial.print(" V), Q raw=");
-  Serial.print(currentQ);
-  Serial.print(" (");
-  Serial.print(currentQ * ADC_REFERENCE_VOLTAGE / DAC_MAX, 3);
-  Serial.println(" V)");
+    noInterrupts();
+    if (rxBufferTail == rxBufferHead) {
+      interrupts();
+      return;
+    }
+    currentI = rxBuffer[rxBufferTail].i;
+    streamedSamples++;
+    currentQ = rxBuffer[rxBufferTail].q;
+    rxBufferTail = (rxBufferTail + 1) % RX_BUFFER_SIZE;
+    interrupts();
+
+    const uint8_t packet[] = {
+        RX_PACKET_HEADER,
+        static_cast<uint8_t>(currentI & 0xFF),
+        static_cast<uint8_t>(currentI >> 8),
+        static_cast<uint8_t>(currentQ & 0xFF),
+        static_cast<uint8_t>(currentQ >> 8)};
+    Serial.write(packet, sizeof(packet));
+  }
+}
+
+void processSerialCommands() {
+  static char command[16];
+  static uint8_t commandLength = 0;
+
+  while (Serial.available() > 0) {
+    const char character = static_cast<char>(Serial.read());
+    if (character == '\n' || character == '\r') {
+      command[commandLength] = '\0';
+      if (strcmp(command, "RX") == 0) {
+        setMode(true);
+      } else if (strcmp(command, "TX") == 0) {
+        setMode(false);
+      } else if (strcmp(command, "NEXT") == 0 && !receiverMode) {
+        modulationIndex = (modulationIndex + 1) % MODULATION_COUNT;
+        symbolIndex = 0;
+        printModulationInfo();
+      } else if (strncmp(command, "MOD ", 4) == 0 && !receiverMode) {
+        const int requestedIndex = atoi(command + 4);
+        if (requestedIndex >= 0 && requestedIndex < static_cast<int>(MODULATION_COUNT)) {
+          modulationIndex = requestedIndex;
+          symbolIndex = 0;
+          printModulationInfo();
+        }
+      } else if (strcmp(command, "DROPPED") == 0) {
+        Serial.print("DROPPED ");
+        Serial.println(rxDroppedSamples);
+      }
+      commandLength = 0;
+    } else if (commandLength < sizeof(command) - 1) {
+      command[commandLength++] = character;
+    }
+  }
 }
 
 void checkButton() {
@@ -198,13 +255,11 @@ void setup() {
 }
 
 void loop() {
+  processSerialCommands();
   checkButton();
 
   if (receiverMode) {
-    if (newReceivedSymbol && millis() - lastRxPrint >= RX_PRINT_INTERVAL_MS) {
-      lastRxPrint = millis();
-      printReceivedVoltage();
-    }
+    streamReceivedSamples();
     return;
   }
 
