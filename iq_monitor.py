@@ -18,8 +18,9 @@ ADC_MAX = 4095
 ADC_VOLTAGE = 3.3
 PACKET_HEADER = 0xA5
 PACKET_SIZE = 5
-MAX_POINTS = 5000
+MAX_POINTS = 100_000
 MODULATIONS = ("QPSK", "16-QAM", "64-QAM", "256-QAM", "1024-QAM", "4096-QAM")
+IDEAL_BORDER_OPTIONS = ("Off",) + MODULATIONS
 
 
 class SampleParser:
@@ -66,6 +67,7 @@ class IQMonitor(tk.Tk):
 
         self.port_var = tk.StringVar()
         self.modulation_var = tk.StringVar(value=MODULATIONS[0])
+        self.border_var = tk.StringVar(value="Off")
         self.status_var = tk.StringVar(value="Disconnected")
         self.count_var = tk.StringVar(value="Samples: 0")
         self._build_controls()
@@ -93,6 +95,13 @@ class IQMonitor(tk.Tk):
         ttk.Button(controls, text="Apply TX", command=self.apply_modulation).pack(side=tk.LEFT)
         ttk.Button(controls, text="Next TX", command=lambda: self.send_command("NEXT")).pack(side=tk.LEFT, padx=5)
 
+        ttk.Label(controls, text="Ideal borders:").pack(side=tk.LEFT, padx=(15, 0))
+        self.border_combo = ttk.Combobox(
+            controls, textvariable=self.border_var, values=IDEAL_BORDER_OPTIONS, state="readonly", width=12
+        )
+        self.border_combo.pack(side=tk.LEFT, padx=5)
+        self.border_combo.bind("<<ComboboxSelected>>", self.update_borders)
+
         modes = ttk.Frame(self, padding=(8, 0, 8, 8))
         modes.pack(fill=tk.X)
         ttk.Button(modes, text="TX mode", command=lambda: self.send_command("TX")).pack(side=tk.LEFT)
@@ -111,8 +120,30 @@ class IQMonitor(tk.Tk):
         self.axis.set_ylim(0, ADC_VOLTAGE)
         self.axis.grid(True, alpha=0.3)
         self.points = self.axis.scatter([], [], s=12, alpha=0.7, color="#1769aa")
+        self.border_lines: list[object] = []
         self.canvas = FigureCanvasTkAgg(figure, master=self)
         self.canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True, padx=8, pady=(0, 8))
+        self.update_borders()
+
+    def update_borders(self, _event: object = None) -> None:
+        for line in self.border_lines:
+            line.remove()
+        self.border_lines.clear()
+
+        if self.border_var.get() == "Off":
+            self.canvas.draw_idle()
+            return
+
+        modulation_index = MODULATIONS.index(self.border_var.get())
+        bits_per_axis = modulation_index + 1
+        axis_level_count = 1 << bits_per_axis
+        level_spacing = ADC_VOLTAGE / (axis_level_count - 1)
+        border_color = "#d95f02"
+        for level_index in range(axis_level_count - 1):
+            border = (level_index + 0.5) * level_spacing
+            self.border_lines.append(self.axis.axvline(border, color=border_color, linewidth=0.8, alpha=0.65))
+            self.border_lines.append(self.axis.axhline(border, color=border_color, linewidth=0.8, alpha=0.65))
+        self.canvas.draw_idle()
 
     def refresh_ports(self) -> None:
         ports = [port.device for port in list_ports.comports()]
