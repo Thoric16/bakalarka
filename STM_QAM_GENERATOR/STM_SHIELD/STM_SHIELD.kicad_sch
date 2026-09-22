@@ -420,6 +420,113 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Custom:ADG619"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -756,6 +863,189 @@
 					(at 0 -3.81 90)
 					(length 2.794)
 					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:LED"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LED"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Light emitting diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "LED diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LED_0_1"
+				(polyline
+					(pts
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LED_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1569,17 +1859,11 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "TODO: 50OHM MATCH INPUT OUTPUT RESISTORS!!!\n"
-		(exclude_from_sim no)
-		(at 177.038 61.722 0)
-		(effects
-			(font
-				(size 5.08 5.08)
-				(thickness 0.254)
-				(bold yes)
-			)
-		)
-		(uuid "7f90d9d7-8c32-49a5-8afa-0d717a0f8737")
+	(junction
+		(at 21.59 36.83)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0b0b6519-a86b-4615-b6f4-c949b0b3b4a0")
 	)
 	(junction
 		(at 40.64 57.15)
@@ -1600,10 +1884,28 @@
 		(uuid "10edcaa2-be23-4e63-a7cf-4ad0e26ff86e")
 	)
 	(junction
+		(at 245.11 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "12fa222a-6bef-4b1b-b24a-ce3d1a6d7b1a")
+	)
+	(junction
+		(at 91.44 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1b08d23f-efa2-425e-88b0-2cf2a2cd6ce9")
+	)
+	(junction
 		(at 59.69 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1f1bb82a-0a22-4093-9696-3f3a97515c6c")
+	)
+	(junction
+		(at 161.29 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "20626736-beda-4264-96e1-104310d3d79f")
 	)
 	(junction
 		(at 190.5 104.14)
@@ -1618,6 +1920,24 @@
 		(uuid "2b75874e-cce8-4416-a187-1210ee12bfb3")
 	)
 	(junction
+		(at 99.06 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3414cb79-d847-47e3-b849-a34893b3c1a3")
+	)
+	(junction
+		(at 196.85 140.97)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "356633a3-1f14-4dd1-ac1f-23d3986eecb1")
+	)
+	(junction
+		(at 196.85 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3865acbd-da7b-443b-8405-a3484f02e15d")
+	)
+	(junction
 		(at 190.5 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1630,10 +1950,28 @@
 		(uuid "3a992499-52d5-42cf-85ab-2b291c483bd4")
 	)
 	(junction
+		(at 66.04 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3ebefb7c-2530-464c-b9e7-47c09db4ce77")
+	)
+	(junction
 		(at 127 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4587619d-063e-491b-9a87-ebd8d95d3db7")
+	)
+	(junction
+		(at 200.66 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4901bd5b-e424-4879-85c2-9373d07144f3")
+	)
+	(junction
+		(at 91.44 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5ae37e91-2f31-46f0-9d12-8bbfdb5fe846")
 	)
 	(junction
 		(at 55.88 29.21)
@@ -1648,10 +1986,34 @@
 		(uuid "5d904505-c926-4be6-b9b9-a349f157d856")
 	)
 	(junction
+		(at 76.2 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5df51b4d-c2bc-4c3d-a503-ff33312e7fe7")
+	)
+	(junction
+		(at 29.21 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "713899bf-dcaf-4052-ac40-aeb14d191a8f")
+	)
+	(junction
 		(at 115.57 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "73929b0e-d939-4db7-b45b-db274f118bae")
+	)
+	(junction
+		(at 66.04 140.97)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7b053529-7426-46a2-86f4-015ee80b5e7d")
+	)
+	(junction
+		(at 157.48 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7c9f6163-09dd-4fae-af60-f8f51e75f422")
 	)
 	(junction
 		(at 127 111.76)
@@ -1660,10 +2022,40 @@
 		(uuid "80ebc69c-a23c-49dc-a445-1c2ca12d4632")
 	)
 	(junction
+		(at 220.98 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "849d89c5-0baa-48c5-a6a0-efc66d943e0b")
+	)
+	(junction
+		(at 220.98 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8cb470b1-60ff-472f-86fc-adbbe4f8a2c8")
+	)
+	(junction
+		(at 199.39 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8de5e255-3bbf-420b-a897-7705ebe6e9bc")
+	)
+	(junction
+		(at 76.2 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "93fc3a66-8f5e-463e-b398-a4704f622830")
+	)
+	(junction
 		(at 72.39 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "98dc7b5b-7e9a-412e-8665-335c5fc4f09b")
+	)
+	(junction
+		(at 196.85 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "99d63c0d-1955-455e-ad37-2899b765edb7")
 	)
 	(junction
 		(at 59.69 135.89)
@@ -1690,10 +2082,52 @@
 		(uuid "9f8ca437-e89f-449e-9131-254b319df882")
 	)
 	(junction
+		(at 207.01 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9fbe5ac0-1cc5-45e3-9f5c-a2b7da56e2c4")
+	)
+	(junction
+		(at 205.74 140.97)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a345d256-fd37-4bff-8675-4df0ae1f697a")
+	)
+	(junction
+		(at 69.85 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a468334d-2cb4-436c-91ad-70fb229fd132")
+	)
+	(junction
+		(at 245.11 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aae4f865-91a4-41ee-ba7c-45949363d121")
+	)
+	(junction
+		(at 21.59 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "baf1cdc7-e0ab-4de4-bd49-0cfacabc2916")
+	)
+	(junction
 		(at 127 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c7ca7e59-763f-409a-9b68-0d5a6040e618")
+	)
+	(junction
+		(at 68.58 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cdf111f0-c67e-403e-ac78-a84e32f254eb")
+	)
+	(junction
+		(at 29.21 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cff54d3d-810f-4fca-aa6f-23128a287250")
 	)
 	(junction
 		(at 59.69 104.14)
@@ -1708,10 +2142,28 @@
 		(uuid "d67bdec9-3f20-44ae-9409-4da9fd9e1791")
 	)
 	(junction
+		(at 30.48 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "da430fa6-9403-4e6c-b49b-23635aab8148")
+	)
+	(junction
+		(at 99.06 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e1cb0b44-f8be-4975-b683-eb716b81787c")
+	)
+	(junction
 		(at 26.67 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e3461ccd-1a23-448d-8a51-3bb1245ba675")
+	)
+	(junction
+		(at 196.85 144.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eb6e453a-4c7c-4a4f-9897-27592bbb7257")
 	)
 	(junction
 		(at 115.57 102.87)
@@ -1724,6 +2176,22 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f970152f-ed3b-45a5-8c69-a25e6d9c9079")
+	)
+	(junction
+		(at 59.69 29.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ffe1f0b3-2c69-4db2-8a4e-a08c21577c3b")
+	)
+	(wire
+		(pts
+			(xy 237.49 115.57) (xy 237.49 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02e5229a-194e-4139-9f26-dcd1dd5b46dd")
 	)
 	(wire
 		(pts
@@ -1747,6 +2215,16 @@
 	)
 	(wire
 		(pts
+			(xy 245.11 133.35) (xy 245.11 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0992f15f-c7e5-45e9-944a-e8656aeba006")
+	)
+	(wire
+		(pts
 			(xy 59.69 104.14) (xy 59.69 105.41)
 		)
 		(stroke
@@ -1767,6 +2245,16 @@
 	)
 	(wire
 		(pts
+			(xy 196.85 109.22) (xy 196.85 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b903274-fa19-4166-83ca-7e5f8c045582")
+	)
+	(wire
+		(pts
 			(xy 52.07 137.16) (xy 50.8 137.16)
 		)
 		(stroke
@@ -1774,6 +2262,26 @@
 			(type default)
 		)
 		(uuid "0bee9441-e6e9-4234-80d5-9b233f24b0b6")
+	)
+	(wire
+		(pts
+			(xy 200.66 135.89) (xy 207.01 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18d80815-9130-4047-a92b-51ea6b6cf926")
+	)
+	(wire
+		(pts
+			(xy 71.12 29.21) (xy 73.66 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a2dfee4-75a2-493b-bdb9-448d28303f44")
 	)
 	(wire
 		(pts
@@ -1817,7 +2325,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 135.89) (xy 207.01 135.89)
+			(xy 190.5 135.89) (xy 200.66 135.89)
 		)
 		(stroke
 			(width 0)
@@ -1847,6 +2355,26 @@
 	)
 	(wire
 		(pts
+			(xy 237.49 115.57) (xy 245.11 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e751f66-407e-45a7-9dfc-8f22a13e9fb6")
+	)
+	(wire
+		(pts
+			(xy 245.11 115.57) (xy 245.11 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2eab2d8f-89fa-4e10-8b2a-0072d1ad23a1")
+	)
+	(wire
+		(pts
 			(xy 115.57 133.35) (xy 116.84 133.35)
 		)
 		(stroke
@@ -1867,6 +2395,26 @@
 	)
 	(wire
 		(pts
+			(xy 68.58 135.89) (xy 76.2 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3686da28-c412-4cbc-8e27-1db7a9007f84")
+	)
+	(wire
+		(pts
+			(xy 29.21 130.81) (xy 29.21 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "372ca510-76c5-4b08-b4a2-d5baaecf2051")
+	)
+	(wire
+		(pts
 			(xy 127 133.35) (xy 127 134.62)
 		)
 		(stroke
@@ -1877,6 +2425,16 @@
 	)
 	(wire
 		(pts
+			(xy 64.77 49.53) (xy 64.77 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c3c7173-cf2b-4d39-98e2-195568f6404f")
+	)
+	(wire
+		(pts
 			(xy 154.94 102.87) (xy 156.21 102.87)
 		)
 		(stroke
@@ -1884,6 +2442,16 @@
 			(type default)
 		)
 		(uuid "3c3d2184-0b6b-418b-aa5b-0cf191ea3db1")
+	)
+	(wire
+		(pts
+			(xy 64.77 58.42) (xy 64.77 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d110614-f8c2-4e56-aafc-25259e31ca05")
 	)
 	(wire
 		(pts
@@ -1907,7 +2475,7 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 115.57) (xy 222.25 115.57)
+			(xy 218.44 115.57) (xy 220.98 115.57)
 		)
 		(stroke
 			(width 0)
@@ -1947,7 +2515,17 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 132.08) (xy 245.11 134.62)
+			(xy 20.32 113.03) (xy 29.21 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45fb6f9b-d652-430b-ad3b-5ced21da6eb2")
+	)
+	(wire
+		(pts
+			(xy 245.11 132.08) (xy 245.11 133.35)
 		)
 		(stroke
 			(width 0)
@@ -1987,7 +2565,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 129.54) (xy 29.21 132.08)
+			(xy 29.21 129.54) (xy 29.21 130.81)
 		)
 		(stroke
 			(width 0)
@@ -2017,6 +2595,26 @@
 	)
 	(wire
 		(pts
+			(xy 20.32 127) (xy 20.32 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "539804b6-0066-43f9-ba5a-3aa67ba204b7")
+	)
+	(wire
+		(pts
+			(xy 196.85 144.78) (xy 196.85 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54cdbdfd-23da-48d6-b6ba-cf1d5f914cd8")
+	)
+	(wire
+		(pts
 			(xy 90.17 45.72) (xy 100.33 45.72)
 		)
 		(stroke
@@ -2027,7 +2625,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 114.3) (xy 245.11 116.84)
+			(xy 245.11 114.3) (xy 245.11 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2047,6 +2645,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 107.95) (xy 162.56 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58bcf1f7-9e67-4be9-b122-234dde62db53")
+	)
+	(wire
+		(pts
 			(xy 59.69 127) (xy 59.69 128.27)
 		)
 		(stroke
@@ -2054,6 +2662,16 @@
 			(type default)
 		)
 		(uuid "59a2c228-45a3-4ffd-9134-0397d2cfecaa")
+	)
+	(wire
+		(pts
+			(xy 220.98 115.57) (xy 222.25 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d54c726-33f4-4b09-bc54-f160ab668df7")
 	)
 	(wire
 		(pts
@@ -2087,6 +2705,16 @@
 	)
 	(wire
 		(pts
+			(xy 196.85 113.03) (xy 196.85 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60028b7f-dbf8-4540-94e6-e99120f37870")
+	)
+	(wire
+		(pts
 			(xy 100.33 36.83) (xy 100.33 38.1)
 		)
 		(stroke
@@ -2117,6 +2745,26 @@
 	)
 	(wire
 		(pts
+			(xy 20.32 113.03) (xy 20.32 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ae4346f-049f-4c38-986a-2d172255355e")
+	)
+	(wire
+		(pts
+			(xy 99.06 138.43) (xy 100.33 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c8b8411-f16e-4e0d-9c36-1f116a0e87fb")
+	)
+	(wire
+		(pts
 			(xy 139.7 140.97) (xy 139.7 143.51)
 		)
 		(stroke
@@ -2127,7 +2775,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 104.14) (xy 76.2 104.14)
+			(xy 59.69 104.14) (xy 69.85 104.14)
 		)
 		(stroke
 			(width 0)
@@ -2197,6 +2845,36 @@
 	)
 	(wire
 		(pts
+			(xy 59.69 49.53) (xy 64.77 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77fff397-5643-4c94-8db9-8f042a547b73")
+	)
+	(wire
+		(pts
+			(xy 196.85 121.92) (xy 196.85 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78d02ebd-5864-4a42-824a-d1034c312010")
+	)
+	(wire
+		(pts
+			(xy 157.48 138.43) (xy 160.02 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c08d3c5-c3d6-4611-b425-eb485b4cafb1")
+	)
+	(wire
+		(pts
 			(xy 64.77 140.97) (xy 66.04 140.97)
 		)
 		(stroke
@@ -2204,6 +2882,16 @@
 			(type default)
 		)
 		(uuid "7dc6496f-0557-466a-b6d4-6be478e37251")
+	)
+	(wire
+		(pts
+			(xy 13.97 36.83) (xy 13.97 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ee62be3-654a-4c6d-811e-817078db4e60")
 	)
 	(wire
 		(pts
@@ -2257,6 +2945,16 @@
 	)
 	(wire
 		(pts
+			(xy 237.49 128.27) (xy 237.49 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87fdffe3-de23-4e4d-87ff-49b0b9ad8039")
+	)
+	(wire
+		(pts
 			(xy 59.69 29.21) (xy 55.88 29.21)
 		)
 		(stroke
@@ -2287,6 +2985,16 @@
 	)
 	(wire
 		(pts
+			(xy 205.74 140.97) (xy 207.01 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8dda3b38-eef8-4590-a4fb-e20f67f8c3e8")
+	)
+	(wire
+		(pts
 			(xy 76.2 140.97) (xy 76.2 147.32)
 		)
 		(stroke
@@ -2304,6 +3012,16 @@
 			(type default)
 		)
 		(uuid "8eee8eb5-1a38-4aeb-a18d-6b710e061555")
+	)
+	(wire
+		(pts
+			(xy 196.85 153.67) (xy 196.85 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f95eddf-5717-450c-9c47-944673755159")
 	)
 	(wire
 		(pts
@@ -2337,6 +3055,26 @@
 	)
 	(wire
 		(pts
+			(xy 20.32 130.81) (xy 29.21 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "954595e2-7ed5-4ba4-a94f-e782d14e73e8")
+	)
+	(wire
+		(pts
+			(xy 81.28 29.21) (xy 82.55 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "960a13cf-7930-4b90-9bc7-73dd6ab872d0")
+	)
+	(wire
+		(pts
 			(xy 55.88 29.21) (xy 53.34 31.75)
 		)
 		(stroke
@@ -2347,7 +3085,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 135.89) (xy 76.2 135.89)
+			(xy 59.69 135.89) (xy 68.58 135.89)
 		)
 		(stroke
 			(width 0)
@@ -2397,6 +3135,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 106.68) (xy 99.06 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa7d32b0-8f50-4d72-aa8b-13a3d4eae053")
+	)
+	(wire
+		(pts
 			(xy 138.43 135.89) (xy 139.7 135.89)
 		)
 		(stroke
@@ -2407,7 +3155,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 140.97) (xy 207.01 140.97)
+			(xy 204.47 140.97) (xy 205.74 140.97)
 		)
 		(stroke
 			(width 0)
@@ -2427,6 +3175,16 @@
 	)
 	(wire
 		(pts
+			(xy 30.48 40.64) (xy 30.48 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "acd47f16-8fc3-4596-aaf9-ab719499375d")
+	)
+	(wire
+		(pts
 			(xy 190.5 135.89) (xy 190.5 137.16)
 		)
 		(stroke
@@ -2434,6 +3192,26 @@
 			(type default)
 		)
 		(uuid "adb4589f-740b-4332-b777-4faf0fd9f3f3")
+	)
+	(wire
+		(pts
+			(xy 29.21 113.03) (xy 29.21 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af49ac9c-f932-47b0-b4e0-41b058b8c6e8")
+	)
+	(wire
+		(pts
+			(xy 59.69 29.21) (xy 63.5 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af7a4611-f910-420f-833a-27d7f378ccb0")
 	)
 	(wire
 		(pts
@@ -2487,7 +3265,7 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 147.32) (xy 222.25 147.32)
+			(xy 218.44 147.32) (xy 220.98 147.32)
 		)
 		(stroke
 			(width 0)
@@ -2537,7 +3315,17 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 107.95) (xy 156.21 107.95)
+			(xy 220.98 147.32) (xy 222.25 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca0da565-5722-4b9a-8483-c16fccbdcb16")
+	)
+	(wire
+		(pts
+			(xy 154.94 107.95) (xy 161.29 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2567,6 +3355,16 @@
 	)
 	(wire
 		(pts
+			(xy 30.48 39.37) (xy 30.48 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccaa56b4-09a0-4bc8-83d8-8dc12ce3de7c")
+	)
+	(wire
+		(pts
 			(xy 40.64 57.15) (xy 43.18 57.15)
 		)
 		(stroke
@@ -2577,13 +3375,23 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 138.43) (xy 156.21 138.43)
+			(xy 154.94 138.43) (xy 157.48 138.43)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ce9bf0dd-c6ac-46bd-8b5f-b8c094e9a05f")
+	)
+	(wire
+		(pts
+			(xy 64.77 67.31) (xy 64.77 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1f2ad86-f61a-4ad0-a9c0-19b37db55726")
 	)
 	(wire
 		(pts
@@ -2594,6 +3402,16 @@
 			(type default)
 		)
 		(uuid "d689102d-2749-429a-8727-5435c4ba7a08")
+	)
+	(wire
+		(pts
+			(xy 237.49 133.35) (xy 245.11 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d771a402-aa25-46dd-96a0-200cc24b57f5")
 	)
 	(wire
 		(pts
@@ -2667,7 +3485,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 104.14) (xy 207.01 104.14)
+			(xy 190.5 104.14) (xy 199.39 104.14)
 		)
 		(stroke
 			(width 0)
@@ -2697,6 +3515,16 @@
 	)
 	(wire
 		(pts
+			(xy 196.85 140.97) (xy 196.85 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e71d2bfd-bc1b-49be-a5a2-c3a18e0476af")
+	)
+	(wire
+		(pts
 			(xy 154.94 135.89) (xy 162.56 135.89)
 		)
 		(stroke
@@ -2714,6 +3542,16 @@
 			(type default)
 		)
 		(uuid "ea49f735-8dc1-4a0d-896a-4fbd5cff39a6")
+	)
+	(wire
+		(pts
+			(xy 69.85 104.14) (xy 76.2 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0159d57-5b01-4565-9ee0-09ecdfa603c8")
 	)
 	(wire
 		(pts
@@ -2747,6 +3585,16 @@
 	)
 	(wire
 		(pts
+			(xy 199.39 104.14) (xy 207.01 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f83f5a3a-9087-499e-b332-76b3b5e8d839")
+	)
+	(wire
+		(pts
 			(xy 29.21 36.83) (xy 30.48 36.83)
 		)
 		(stroke
@@ -2754,6 +3602,16 @@
 			(type default)
 		)
 		(uuid "fb32d450-a465-4157-955b-0c4dcceedb4a")
+	)
+	(wire
+		(pts
+			(xy 13.97 48.26) (xy 13.97 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fcaef34c-7476-486f-a17f-0051a69cee26")
 	)
 	(wire
 		(pts
@@ -2767,7 +3625,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 111.76) (xy 29.21 114.3)
+			(xy 29.21 111.76) (xy 29.21 113.03)
 		)
 		(stroke
 			(width 0)
@@ -2821,6 +3679,28 @@
 	)
 	(global_label "TX_I"
 		(shape input)
+		(at 100.33 106.68 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1cc07568-1a5a-41d8-9745-8b0558b2cd87")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 107.0647 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TX_I"
+		(shape input)
 		(at 138.43 105.41 180)
 		(fields_autoplaced yes)
 		(effects
@@ -2854,28 +3734,6 @@
 		(uuid "4cd62160-f272-4a0c-9b20-dcb8c6947070")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 163.9728 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "TX_Q"
-		(shape input)
-		(at 91.44 138.43 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "501d2eb6-8596-4a65-8796-c27e9a301ec7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 98.9004 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2931,7 +3789,7 @@
 	)
 	(global_label "RX{slash}TX"
 		(shape input)
-		(at 156.21 107.95 0)
+		(at 162.56 107.95 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2941,7 +3799,7 @@
 		)
 		(uuid "56b96866-0242-4406-8c1d-0fb990f12802")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 165.1823 107.95 0)
+			(at 171.5323 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2973,9 +3831,9 @@
 			)
 		)
 	)
-	(global_label "RX{slash}TX"
+	(global_label "TX_Q"
 		(shape input)
-		(at 156.21 138.43 0)
+		(at 100.33 138.43 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2983,9 +3841,9 @@
 			)
 			(justify left)
 		)
-		(uuid "c05982b5-cd12-4f5b-aba3-b0960b64b889")
+		(uuid "abded2af-17c6-41c7-9ef6-e534184e5438")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 165.1823 138.43 0)
+			(at 107.7904 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2995,9 +3853,9 @@
 			)
 		)
 	)
-	(global_label "TX_I"
+	(global_label "RX{slash}TX"
 		(shape input)
-		(at 91.44 106.68 0)
+		(at 160.02 138.43 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3005,9 +3863,9 @@
 			)
 			(justify left)
 		)
-		(uuid "c89e1596-db24-41cc-b176-a90d78ae3248")
+		(uuid "c05982b5-cd12-4f5b-aba3-b0960b64b889")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 98.1747 106.68 0)
+			(at 168.9923 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3085,6 +3943,144 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 196.85 118.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "00846e24-c3fb-4f95-8b03-7cbf6854ca50")
+		(property "Reference" "R24"
+			(at 198.374 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "R"
+			(at 198.374 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 195.072 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 196.85 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "53cff590-9d73-4663-80ac-0d89a352c84a")
+		)
+		(pin "2"
+			(uuid "d0c6dc9b-fd2e-4c2d-8303-2a6dbd74ff2b")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 77.47 29.21 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "041050bb-1125-470d-a56b-f8ab6856bfef")
+		(property "Reference" "R34"
+			(at 76.2 27.686 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "R"
+			(at 78.74 27.686 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 77.47 30.988 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 77.47 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 77.47 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "112f0f4b-536b-42c9-9b24-e377b9b82279")
+		)
+		(pin "2"
+			(uuid "ca99c797-4da0-4d6d-a9ed-db7832f663d1")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "R34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 69.85 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3110,7 +4106,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 69.85 107.442 90)
 			(effects
 				(font
@@ -3285,6 +4281,140 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 220.98 147.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0f9fde45-06f3-431a-b99c-f6b18473057e")
+		(property "Reference" "TP5"
+			(at 222.25 145.034 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 223.52 145.2879 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 226.06 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 226.06 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 220.98 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "646cb2d3-3b00-4b75-be64-97cc8a12cf7d")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 59.69 29.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "10a321ff-c491-45c4-abcd-97fa87aebddb")
+		(property "Reference" "TP22"
+			(at 60.96 26.924 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 62.23 27.1779 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 64.77 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 64.77 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 59.69 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5c9b852d-9e7a-4e2b-a067-844d073b5ce4")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 133.35 142.24 0)
 		(unit 1)
@@ -3444,7 +4574,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 99.3648 38.1 0)
 			(effects
 				(font
@@ -3553,6 +4683,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 199.39 104.14 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1a18f673-3d4d-4e4e-a443-7e9d5b68743e")
+		(property "Reference" "TP3"
+			(at 200.66 101.854 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 201.93 102.1079 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 204.47 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 204.47 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 199.39 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "54645141-c37e-4723-a78e-2b8afe8d6a64")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 200.66 140.97 270)
 		(unit 1)
@@ -3579,7 +4776,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 200.66 139.192 90)
 			(effects
 				(font
@@ -3708,6 +4905,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 64.77 54.61 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "234fc134-ebd2-410e-b882-5d0ef2d2c020")
+		(property "Reference" "D7"
+			(at 67.31 51.7524 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LED"
+			(at 67.31 54.2924 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 64.77 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 64.77 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 64.77 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 64.77 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "db6d1cf3-99f1-48a7-9c7d-2f92d459f86d")
+		)
+		(pin "2"
+			(uuid "d6830bb9-cf59-46be-8451-346bc8c2fd7a")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "D7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Amplifier_Operational:ADA4807-2ARM")
 		(at 214.63 106.68 0)
 		(unit 1)
@@ -3818,7 +5094,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 120.65 104.648 90)
 			(effects
 				(font
@@ -3927,6 +5203,142 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 64.77 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2736f338-6719-4a1d-8da7-b7db3789ee5f")
+		(property "Reference" "R33"
+			(at 66.294 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "R"
+			(at 66.294 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 62.992 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 64.77 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 64.77 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "17c325d1-e8f0-4ba4-a12e-c5b9ff10513f")
+		)
+		(pin "2"
+			(uuid "f2c1048c-fbed-4f48-b851-592717988e1a")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "R33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 196.85 144.78 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2a4ef9c1-0589-4316-bd96-ce5cd7e486ca")
+		(property "Reference" "TP8"
+			(at 192.532 149.098 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 194.8179 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 196.85 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 196.85 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9d15c79d-09fa-425b-9173-7922a608cdfe")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 127 142.24 0)
 		(unit 1)
@@ -3993,6 +5405,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 67.31 29.21 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2b2d367c-ab2a-4195-8c87-46b28e8002aa")
+		(property "Reference" "D6"
+			(at 68.8975 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 68.8975 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 67.31 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 67.31 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 67.31 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 67.31 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5ee98ec3-d8ab-4a08-8e22-2db2ef6c82c2")
+		)
+		(pin "2"
+			(uuid "533c285b-c665-4999-9447-6708c21a1303")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 90.17 41.91 180)
 		(unit 1)
@@ -4020,7 +5509,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 89.2048 38.1 0)
 			(effects
 				(font
@@ -4089,7 +5578,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 126.0348 104.14 0)
 			(effects
 				(font
@@ -4132,6 +5621,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 82.55 29.21 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "308c8e51-4d51-4213-9465-3d2e11ff3397")
+		(property "Reference" "#PWR038"
+			(at 88.9 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 86.36 29.2099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 82.55 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 82.55 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d4df2250-c0ed-4f33-9e9c-9144efbb12ee")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "#PWR038")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 59.69 33.02 0)
 		(unit 1)
@@ -4158,7 +5714,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 57.912 33.02 90)
 			(effects
 				(font
@@ -4267,6 +5823,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 91.44 106.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3b1b4cff-cd6f-449c-a358-888e302fca22")
+		(property "Reference" "TP9"
+			(at 92.71 104.394 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 93.98 104.6479 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 96.52 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 96.52 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 91.44 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f6970142-c02e-4a6f-a35e-9757d860a909")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 29.21 111.76 0)
 		(unit 1)
@@ -4359,7 +5982,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 214.63 113.792 90)
 			(effects
 				(font
@@ -4494,7 +6117,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 69.85 139.192 90)
 			(effects
 				(font
@@ -4531,6 +6154,73 @@
 			(project "STM_SHIELD"
 				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
 					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 69.85 104.14 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "43b3c325-c185-4458-aa8d-8c77560e3d77")
+		(property "Reference" "TP16"
+			(at 71.12 101.854 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 72.39 102.1079 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 74.93 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 69.85 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1e0d7121-4cbd-4699-bcd9-99cc64db96ba")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP16")
 					(unit 1)
 				)
 			)
@@ -4629,7 +6319,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 55.88 135.382 90)
 			(effects
 				(font
@@ -4666,6 +6356,140 @@
 			(project "STM_SHIELD"
 				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
 					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 59.69 41.91 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4748598f-acc3-404a-9b98-d4660c514ada")
+		(property "Reference" "TP23"
+			(at 60.96 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 62.23 39.8779 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 64.77 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 64.77 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 59.69 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eed7ef6a-fa97-4b6c-97b3-5632c16c31dc")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 99.06 106.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "49a647d6-bd59-4ec7-b12e-d7f9e51cc9d0")
+		(property "Reference" "TP19"
+			(at 100.33 104.394 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 101.6 104.6479 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 104.14 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 104.14 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 99.06 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2989bd89-564d-4239-9638-19063ce527bc")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP19")
 					(unit 1)
 				)
 			)
@@ -4804,6 +6628,139 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 66.04 140.97 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4fb4450d-7f12-4f17-b07a-437257d2070b")
+		(property "Reference" "TP14"
+			(at 64.77 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 63.5 143.0021 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 60.96 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 66.04 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ae19dfc6-34cf-4b7e-8118-aaaf2a9ae3cf")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 13.97 49.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "52e568f9-1f3c-4c80-b58c-ad5c38bc0980")
+		(property "Reference" "#PWR036"
+			(at 13.97 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 13.97 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 13.97 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 13.97 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 13.97 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8f3f7926-692f-40f9-83f6-d9a2263b3af3")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_Coaxial_Small")
 		(at 107.95 102.87 180)
 		(unit 1)
@@ -4829,7 +6786,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Coaxial:SMA_Samtec_SMA-J-P-H-ST-EM1_EdgeMount"
 			(at 107.95 102.87 0)
 			(effects
 				(font
@@ -5052,7 +7009,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 25.4 38.608 90)
 			(effects
 				(font
@@ -5122,7 +7079,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 21.8948 46.99 0)
 			(effects
 				(font
@@ -5298,6 +7255,208 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 13.97 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "621501b4-0ab1-48f0-a259-1e4fbdc74c31")
+		(property "Reference" "R32"
+			(at 15.494 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "R"
+			(at 15.494 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 12.192 44.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 13.97 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 13.97 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2f4daedd-23fe-4f7c-8b44-f943dc1b0826")
+		)
+		(pin "2"
+			(uuid "57f6577a-8ca0-4f6d-83fa-fb3ea6781b25")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "R32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 220.98 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "66dfbe47-574f-4c4b-94ce-f9308ceb6ce1")
+		(property "Reference" "TP4"
+			(at 222.25 113.284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 223.52 113.5379 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 226.06 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 226.06 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 220.98 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9d3ac1bf-9fbd-4a48-9a71-6c73d5a617bb")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 196.85 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "66fd6615-3752-42b3-a701-05cc704bc026")
+		(property "Reference" "#PWR032"
+			(at 196.85 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 196.85 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 196.85 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 196.85 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 196.85 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33ea052a-41f1-4d51-a8c0-09546ad34a8d")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 68.58 36.83 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5321,7 +7480,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 68.58 38.608 90)
 			(effects
 				(font
@@ -5390,7 +7549,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 83.82 113.792 90)
 			(effects
 				(font
@@ -5500,6 +7659,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 66.04 109.22 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "78a6d1d9-7301-4988-8a66-d4a8019c8ae4")
+		(property "Reference" "TP15"
+			(at 64.77 111.506 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 63.5 111.2521 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 60.96 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 66.04 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "029338f4-3082-4b1f-9168-61d902fb8617")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 190.5 100.33 0)
 		(unit 1)
@@ -5526,7 +7752,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 188.722 100.33 90)
 			(effects
 				(font
@@ -5629,6 +7855,207 @@
 			(project "STM_SHIELD"
 				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
 					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 99.06 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7fd07d75-41e3-42fb-bd68-ad5438a86528")
+		(property "Reference" "TP20"
+			(at 100.33 136.144 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 101.6 136.3979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 104.14 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 104.14 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 99.06 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2502d064-fa06-44cf-99b3-5bcb3cc929d1")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 161.29 107.95 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "82bac89d-dafd-4ec9-b5a6-94b6dd5d240b")
+		(property "Reference" "TP18"
+			(at 160.02 110.236 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 158.75 109.9821 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 156.21 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 156.21 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 161.29 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "09699057-a848-41f8-8654-88596b92fdae")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 200.66 135.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "86a915d3-e5e1-4aa9-b4cd-f86022d1b779")
+		(property "Reference" "TP7"
+			(at 201.93 133.604 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 203.2 133.8579 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 205.74 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 200.66 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "72879592-1732-4e89-a34d-12e06a72ace5")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP7")
 					(unit 1)
 				)
 			)
@@ -5807,6 +8234,139 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 21.59 31.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "89c61bf3-f370-4c34-9001-eaa7c48f7fbf")
+		(property "Reference" "TP21"
+			(at 15.24 28.956 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 24.13 29.7179 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 26.67 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 26.67 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 21.59 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "02951c1f-6887-4e9a-84f3-2139f9a6f6bd")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 64.77 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8d18e971-4b8b-4d0a-a310-1edcf8cba2ab")
+		(property "Reference" "#PWR037"
+			(at 64.77 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 64.77 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 64.77 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 64.77 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "73f51990-d0fb-4c61-9683-590379fa3473")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "#PWR037")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 59.69 49.53 180)
 		(unit 1)
@@ -5873,6 +8433,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 30.48 40.64 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8f349616-693f-48f0-be16-0081f41d21fb")
+		(property "Reference" "#PWR039"
+			(at 34.29 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 26.67 40.6399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 30.48 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 30.48 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6c059ba9-225a-4aab-af1d-5a6a9f0b1f50")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Amplifier_Operational:ADA4807-2ARM")
 		(at 83.82 138.43 0)
 		(unit 2)
@@ -5926,19 +8553,19 @@
 			)
 		)
 		(pin "8"
-			(uuid "836d6163-0674-41cf-b95e-88af60a33d62")
+			(uuid "836d6163-0674-41cf-b95e-88af60a33d63")
 		)
 		(pin "3"
-			(uuid "47bf9375-33a3-456c-a592-af5477a476a6")
+			(uuid "47bf9375-33a3-456c-a592-af5477a476a7")
 		)
 		(pin "2"
-			(uuid "cc4c1dc3-793b-470f-a77d-849a6d6ef776")
+			(uuid "cc4c1dc3-793b-470f-a77d-849a6d6ef777")
 		)
 		(pin "5"
 			(uuid "9c30acf6-fba6-4085-97c3-ff4f09fc80c5")
 		)
 		(pin "1"
-			(uuid "90343ce1-727b-45c8-916f-d1d89698132b")
+			(uuid "90343ce1-727b-45c8-916f-d1d89698132c")
 		)
 		(pin "6"
 			(uuid "e5bd8296-31bf-4f36-8cd0-930970931251")
@@ -5947,7 +8574,7 @@
 			(uuid "eac11746-eafd-49fa-9092-02b0b630fca3")
 		)
 		(pin "4"
-			(uuid "bfc6c0fd-a2a6-4718-9f74-1673f55fdaf0")
+			(uuid "bfc6c0fd-a2a6-4718-9f74-1673f55fdaf1")
 		)
 		(instances
 			(project "STM_SHIELD"
@@ -6091,6 +8718,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 76.2 147.32 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9af39ff2-ec4d-4ca3-8922-b962ec8237ff")
+		(property "Reference" "TP12"
+			(at 74.93 149.606 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 73.66 149.3521 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 71.12 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 71.12 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 76.2 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a40a8d5a-aa12-4511-a421-a7e7edcaa2de")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 59.69 100.33 0)
 		(unit 1)
@@ -6117,7 +8811,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 57.912 100.33 90)
 			(effects
 				(font
@@ -6186,7 +8880,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 200.66 107.442 90)
 			(effects
 				(font
@@ -6229,6 +8923,139 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a0e091cc-cd6a-4a71-b5b0-c3876bcc73fe")
+		(property "Reference" "TP6"
+			(at 207.01 138.684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 208.28 138.9379 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 210.82 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 210.82 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9421417e-69db-48fd-8866-9f90e230e13f")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 196.85 123.19 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "aa7e6d54-ea99-4622-87a6-bb67a5405ffc")
+		(property "Reference" "#PWR031"
+			(at 196.85 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 196.85 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 196.85 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 196.85 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 196.85 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8478c2f4-11e0-4434-91df-eafedb45ad71")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 59.69 45.72 0)
 		(unit 1)
@@ -6255,7 +9082,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 57.912 45.72 90)
 			(effects
 				(font
@@ -6292,6 +9119,73 @@
 			(project "STM_SHIELD"
 				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
 					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 196.85 113.03 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ad873fa2-d662-4d1c-92bb-22b0c2dbdd51")
+		(property "Reference" "TP2"
+			(at 190.754 115.316 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 194.8179 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 196.85 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 196.85 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "51524512-6372-4cb6-a68b-b54710ab6af9")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -6364,6 +9258,75 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 95.25 106.68 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bc560b67-3661-4d52-95a9-4e1119bd502f")
+		(property "Reference" "R26"
+			(at 96.52 108.204 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "R"
+			(at 93.98 108.204 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 95.25 104.902 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 95.25 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 95.25 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "18e5739f-f9ce-4fc9-a1f8-e105ec63f734")
+		)
+		(pin "2"
+			(uuid "fea17527-fb00-4e0c-8835-04e016ff62ce")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "R26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 127 138.43 180)
 		(unit 1)
@@ -6390,7 +9353,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 126.0348 134.62 0)
 			(effects
 				(font
@@ -6459,7 +9422,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 186.69 103.632 90)
 			(effects
 				(font
@@ -6502,6 +9465,75 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 196.85 149.86 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c17c1ff8-44bd-4acf-8827-f1f4556a29f8")
+		(property "Reference" "R25"
+			(at 198.374 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "R"
+			(at 198.374 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 195.072 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 196.85 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "83c5f252-f046-4fd1-8cc3-e84751e3ed93")
+		)
+		(pin "2"
+			(uuid "a0206c6a-58f8-4d55-9349-ef6c384e681f")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_Coaxial_Small")
 		(at 107.95 133.35 180)
 		(unit 1)
@@ -6527,7 +9559,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Coaxial:SMA_Samtec_SMA-J-P-H-ST-EM1_EdgeMount"
 			(at 107.95 133.35 0)
 			(effects
 				(font
@@ -6564,6 +9596,75 @@
 			(project "STM_SHIELD"
 				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 95.25 138.43 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c3434b74-ac93-4e12-9d42-1eb8f6a122fa")
+		(property "Reference" "R27"
+			(at 96.52 139.954 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "R"
+			(at 93.98 139.954 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 95.25 136.652 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 95.25 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 95.25 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c47d1674-9f2a-4f3b-b4a6-42ab499cda33")
+		)
+		(pin "2"
+			(uuid "d3f0fe2b-9253-4978-85f2-84d5347ee82b")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "R27")
 					(unit 1)
 				)
 			)
@@ -6728,7 +9829,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 52.3748 54.61 0)
 			(effects
 				(font
@@ -6929,7 +10030,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 214.63 145.542 90)
 			(effects
 				(font
@@ -6998,7 +10099,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 188.722 132.08 90)
 			(effects
 				(font
@@ -7067,7 +10168,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 83.82 145.542 90)
 			(effects
 				(font
@@ -7137,7 +10238,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 77.7748 38.1 0)
 			(effects
 				(font
@@ -7174,6 +10275,73 @@
 			(project "STM_SHIELD"
 				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
 					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 207.01 115.57 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d373e656-7c14-4e7f-babd-9a20d3e5addc")
+		(property "Reference" "TP1"
+			(at 205.74 117.856 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 204.47 117.6021 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 201.93 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 201.93 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 207.01 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "111d00bf-04ce-4ede-a66d-9687f97d1355")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP1")
 					(unit 1)
 				)
 			)
@@ -7246,6 +10414,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 157.48 138.43 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d564a97d-df3c-483c-8bef-e945fdfce6be")
+		(property "Reference" "TP17"
+			(at 161.036 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 154.94 140.4621 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 152.4 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 152.4 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 157.48 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d265c57f-ac98-4eee-badc-27ae70e98b92")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Amplifier_Operational:ADA4807-2ARM")
 		(at 31.75 121.92 0)
 		(unit 3)
@@ -7304,22 +10539,22 @@
 			(uuid "7bc85116-f8d6-4c85-b0ed-5f79315c8f16")
 		)
 		(pin "3"
-			(uuid "47bf9375-33a3-456c-a592-af5477a476a5")
+			(uuid "47bf9375-33a3-456c-a592-af5477a476a8")
 		)
 		(pin "2"
-			(uuid "cc4c1dc3-793b-470f-a77d-849a6d6ef775")
+			(uuid "cc4c1dc3-793b-470f-a77d-849a6d6ef778")
 		)
 		(pin "5"
-			(uuid "d94b9c0a-7820-4236-a594-8eeb29f4477a")
+			(uuid "d94b9c0a-7820-4236-a594-8eeb29f4477c")
 		)
 		(pin "1"
-			(uuid "90343ce1-727b-45c8-916f-d1d89698132a")
+			(uuid "90343ce1-727b-45c8-916f-d1d89698132d")
 		)
 		(pin "6"
-			(uuid "69c414dc-c327-491b-b725-992e4247412b")
+			(uuid "69c414dc-c327-491b-b725-992e4247412d")
 		)
 		(pin "7"
-			(uuid "4885a55e-a40e-4c20-9b0e-eef2df8403fd")
+			(uuid "4885a55e-a40e-4c20-9b0e-eef2df8403ff")
 		)
 		(pin "4"
 			(uuid "2aae93a6-d645-44c7-b578-f632b2ef7a7e")
@@ -7329,6 +10564,75 @@
 				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
 					(reference "U6")
 					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 237.49 124.46 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d9b3640b-c1b3-44bc-8155-c3332b7bb133")
+		(property "Reference" "C11"
+			(at 240.284 124.714 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "C"
+			(at 240.284 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 236.5248 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 237.49 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 237.49 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eb02c899-385e-4682-96fc-ae25b4ec21af")
+		)
+		(pin "2"
+			(uuid "2866eecf-8d11-4e4b-8c4a-8a2994a6951b")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "C11")
+					(unit 1)
 				)
 			)
 		)
@@ -7358,7 +10662,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 68.58 43.688 90)
 			(effects
 				(font
@@ -7527,7 +10831,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 120.65 135.128 90)
 			(effects
 				(font
@@ -7596,7 +10900,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 114.6048 104.14 0)
 			(effects
 				(font
@@ -7639,6 +10943,75 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 20.32 123.19 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e5da7717-50c0-46e0-b53d-4ac01ecf1e53")
+		(property "Reference" "C10"
+			(at 23.114 123.444 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "C"
+			(at 23.114 125.984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 19.3548 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 20.32 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 20.32 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "386c71e8-da47-44c6-9d93-930763eabfdf")
+		)
+		(pin "2"
+			(uuid "60a0ff48-ef86-48d3-ace6-80c515dec7fe")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 55.88 105.41 270)
 		(unit 1)
@@ -7665,7 +11038,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 55.88 103.632 90)
 			(effects
 				(font
@@ -7702,6 +11075,73 @@
 			(project "STM_SHIELD"
 				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
 					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 68.58 135.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ea484411-f416-4679-84a0-e1f67595712b")
+		(property "Reference" "TP13"
+			(at 69.85 133.604 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 71.12 133.8579 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 73.66 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 73.66 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 68.58 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cbf50b48-d239-4ba7-becb-20e2f4260237")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP13")
 					(unit 1)
 				)
 			)
@@ -7800,7 +11240,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 57.912 132.08 90)
 			(effects
 				(font
@@ -7843,6 +11283,150 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 91.44 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f0a75574-c29a-4630-afd7-e40ce47fecda")
+		(property "Reference" "TP11"
+			(at 92.71 136.144 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 93.98 136.3979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 96.52 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 96.52 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 91.44 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aaf9ea1b-1408-4d83-ab3e-620ba53c655f")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 17.78 36.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f28c46b7-b58f-4995-a0fe-534f19d059f6")
+		(property "Reference" "D5"
+			(at 16.1925 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 16.1925 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 17.78 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 17.78 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 17.78 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 17.78 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "11f8612e-c340-4a81-bdc1-e230563f265a")
+		)
+		(pin "2"
+			(uuid "e54f31f6-83b8-4bd5-aa53-9243ec225d73")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 186.69 137.16 270)
 		(unit 1)
@@ -7869,7 +11453,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 186.69 135.382 90)
 			(effects
 				(font
@@ -8044,6 +11628,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 76.2 115.57 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f847f141-acce-4908-b1b3-360afb176410")
+		(property "Reference" "TP10"
+			(at 74.93 117.856 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 73.66 117.6021 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 71.12 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 71.12 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 76.2 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fe8a01ca-e627-4898-8df9-d52a0d66080a")
+		)
+		(instances
+			(project "STM_SHIELD"
+				(path "/573cf960-f02d-4d89-b687-99fd9b86cfa2"
+					(reference "TP10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 115.57 138.43 180)
 		(unit 1)
@@ -8070,7 +11721,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 114.6048 134.62 0)
 			(effects
 				(font
@@ -8166,7 +11817,7 @@
 			)
 		)
 		(pin "8"
-			(uuid "836d6163-0674-41cf-b95e-88af60a33d60")
+			(uuid "836d6163-0674-41cf-b95e-88af60a33d64")
 		)
 		(pin "3"
 			(uuid "b5ff3c03-622b-4951-bf82-69b0a2dc3604")
@@ -8175,19 +11826,19 @@
 			(uuid "d7b28d64-cdde-418a-a449-2ec0e58c8b9a")
 		)
 		(pin "5"
-			(uuid "d94b9c0a-7820-4236-a594-8eeb29f44779")
+			(uuid "d94b9c0a-7820-4236-a594-8eeb29f4477d")
 		)
 		(pin "1"
 			(uuid "09e95cf4-76c2-4356-a771-7a287a5b85e3")
 		)
 		(pin "6"
-			(uuid "69c414dc-c327-491b-b725-992e4247412a")
+			(uuid "69c414dc-c327-491b-b725-992e4247412e")
 		)
 		(pin "7"
-			(uuid "4885a55e-a40e-4c20-9b0e-eef2df8403fc")
+			(uuid "4885a55e-a40e-4c20-9b0e-eef2df840400")
 		)
 		(pin "4"
-			(uuid "bfc6c0fd-a2a6-4718-9f74-1673f55fdaee")
+			(uuid "bfc6c0fd-a2a6-4718-9f74-1673f55fdaf2")
 		)
 		(instances
 			(project "STM_SHIELD"
