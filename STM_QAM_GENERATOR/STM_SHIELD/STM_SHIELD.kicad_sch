@@ -1859,6 +1859,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "OPA2863 drop in replacement for the ADA4807!!!"
+		(exclude_from_sim no)
+		(at 181.864 71.628 0)
+		(effects
+			(font
+				(size 5.08 5.08)
+			)
+		)
+		(uuid "58764fc0-11d1-4a28-af85-f9362676f252")
+	)
 	(junction
 		(at 21.59 36.83)
 		(diameter 0)
@@ -3959,7 +3969,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "DNP"
 			(at 198.374 119.38 0)
 			(effects
 				(font
@@ -4028,7 +4038,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "470"
 			(at 78.74 27.686 0)
 			(effects
 				(font
@@ -4097,7 +4107,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "30k"
 			(at 68.58 110.744 0)
 			(effects
 				(font
@@ -4565,7 +4575,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "4.7u"
 			(at 104.14 43.1799 0)
 			(effects
 				(font
@@ -4767,7 +4777,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1.5k"
 			(at 199.39 142.494 0)
 			(effects
 				(font
@@ -5086,7 +5096,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "0"
 			(at 120.904 105.156 90)
 			(effects
 				(font
@@ -5220,7 +5230,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "470"
 			(at 66.294 64.77 0)
 			(effects
 				(font
@@ -5500,7 +5510,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "2.2u"
 			(at 93.98 43.1799 0)
 			(effects
 				(font
@@ -5569,7 +5579,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "DNP"
 			(at 129.794 110.744 0)
 			(effects
 				(font
@@ -5705,7 +5715,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "160k"
 			(at 61.214 34.29 0)
 			(effects
 				(font
@@ -5973,7 +5983,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "11k"
 			(at 213.36 117.094 0)
 			(effects
 				(font
@@ -6108,7 +6118,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "30k"
 			(at 68.58 142.494 0)
 			(effects
 				(font
@@ -6310,7 +6320,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "2k7"
 			(at 54.61 138.684 0)
 			(effects
 				(font
@@ -7000,13 +7010,12 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "10k"
 			(at 25.4 39.37 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
@@ -7070,7 +7079,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1u"
 			(at 26.67 52.0699 0)
 			(effects
 				(font
@@ -7271,7 +7280,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "470"
 			(at 15.494 45.72 0)
 			(effects
 				(font
@@ -7472,7 +7481,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "91k"
 			(at 68.326 39.37 90)
 			(effects
 				(font
@@ -7540,7 +7549,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "3k9"
 			(at 82.55 117.094 0)
 			(effects
 				(font
@@ -7743,7 +7752,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "47k"
 			(at 192.024 101.6 0)
 			(effects
 				(font
@@ -8440,7 +8449,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "8f349616-693f-48f0-be16-0081f41d21fb")
 		(property "Reference" "#PWR039"
 			(at 34.29 40.64 0)
@@ -8452,7 +8460,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 26.67 40.6399 90)
+			(at 28.448 42.164 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8802,7 +8810,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "47k"
 			(at 61.214 101.6 0)
 			(effects
 				(font
@@ -8871,7 +8879,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "1.5k"
 			(at 199.39 110.744 0)
 			(effects
 				(font
@@ -9073,7 +9081,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "130k"
 			(at 61.468 46.99 0)
 			(effects
 				(font
@@ -9275,7 +9283,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "0"
 			(at 93.98 108.204 0)
 			(effects
 				(font
@@ -9344,7 +9352,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "DNP"
 			(at 129.794 141.224 0)
 			(effects
 				(font
@@ -9413,7 +9421,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "2k7"
 			(at 185.42 106.934 0)
 			(effects
 				(font
@@ -9482,7 +9490,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "DNP"
 			(at 198.374 151.13 0)
 			(effects
 				(font
@@ -9619,7 +9627,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "0"
 			(at 93.98 139.954 0)
 			(effects
 				(font
@@ -9820,8 +9828,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
-			(at 56.134 61.214 0)
+		(property "Value" "4,7-10u"
+			(at 53.848 61.214 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10021,7 +10029,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "11k"
 			(at 213.36 148.844 0)
 			(effects
 				(font
@@ -10090,7 +10098,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "47k"
 			(at 192.024 133.35 0)
 			(effects
 				(font
@@ -10159,7 +10167,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "3k9"
 			(at 82.55 148.844 0)
 			(effects
 				(font
@@ -10229,7 +10237,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "2.2u"
 			(at 82.55 43.1799 0)
 			(effects
 				(font
@@ -10586,8 +10594,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
-			(at 240.284 127.254 0)
+		(property "Value" "100n"
+			(at 238.252 127.254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10654,7 +10662,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "75k"
 			(at 68.834 44.196 90)
 			(effects
 				(font
@@ -10823,7 +10831,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "0"
 			(at 120.904 135.636 90)
 			(effects
 				(font
@@ -10891,7 +10899,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "DNP"
 			(at 117.602 110.744 0)
 			(effects
 				(font
@@ -10960,7 +10968,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 23.114 125.984 0)
 			(effects
 				(font
@@ -11029,7 +11037,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "2k7"
 			(at 54.61 106.934 0)
 			(effects
 				(font
@@ -11231,7 +11239,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "47k"
 			(at 61.214 133.35 0)
 			(effects
 				(font
@@ -11444,7 +11452,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "2k7"
 			(at 185.42 138.684 0)
 			(effects
 				(font
@@ -11712,7 +11720,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "DNP"
 			(at 117.602 141.224 0)
 			(effects
 				(font
