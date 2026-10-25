@@ -3006,6 +3006,26 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "CLK IN"
+		(exclude_from_sim no)
+		(at 201.676 114.554 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "12cbdbfc-7647-4d19-b124-97ef353ffe01")
+	)
+	(text "CLK OUT"
+		(exclude_from_sim no)
+		(at 200.914 112.014 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6d03998c-ec50-4797-8a30-aacc5c3efe36")
+	)
 	(junction
 		(at 109.22 86.36)
 		(diameter 0)
@@ -3568,10 +3588,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "09c3884d-36a9-4ac4-8c2b-5f869c5b25c4")
 		(property "Reference" "R31"
-			(at 114.3 80.01 90)
+			(at 114.3 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3579,7 +3598,7 @@
 			)
 		)
 		(property "Value" "470"
-			(at 114.3 82.55 90)
+			(at 114.3 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6220,18 +6239,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "7444e410-efab-4846-b775-5ab457152c6b")
 		(property "Reference" "D2"
-			(at 121.6025 74.93 0)
+			(at 125.984 80.264 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "LED"
-			(at 121.6025 77.47 0)
+		(property "Value" "R"
+			(at 117.856 80.264 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6297,18 +6315,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "839e771b-efc3-46a4-9eaf-8fc907661674")
 		(property "Reference" "D3"
-			(at 121.6025 77.47 0)
+			(at 125.984 82.804 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "LED"
-			(at 121.6025 80.01 0)
+		(property "Value" "W"
+			(at 117.856 82.804 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6374,18 +6391,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "8ed0b090-c72f-4ffa-833e-418e82470f9b")
 		(property "Reference" "D1"
-			(at 121.6025 72.39 0)
+			(at 125.984 77.724 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "LED"
-			(at 121.6025 74.93 0)
+		(property "Value" "G"
+			(at 117.856 77.978 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6517,10 +6533,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "92cbecc5-2e0d-48ef-ab47-8ed6cca264e6")
 		(property "Reference" "R29"
-			(at 114.3 74.93 90)
+			(at 114.3 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6528,7 +6543,7 @@
 			)
 		)
 		(property "Value" "470"
-			(at 114.3 77.47 90)
+			(at 114.3 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7077,18 +7092,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "bcfb5e38-3250-481b-bca1-bff56be8a410")
 		(property "Reference" "D4"
-			(at 121.6025 80.01 0)
+			(at 126.238 85.344 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "LED"
-			(at 121.6025 82.55 0)
+		(property "Value" "Y"
+			(at 117.856 85.598 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7288,10 +7302,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "c5ad90fb-912e-4ad4-9cb8-566b339c4e1b")
 		(property "Reference" "R28"
-			(at 114.3 72.39 90)
+			(at 114.3 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7299,7 +7312,7 @@
 			)
 		)
 		(property "Value" "470"
-			(at 114.3 74.93 90)
+			(at 114.3 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7574,10 +7587,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "faa228d3-8c9b-4a4d-b461-c29d3188e44b")
 		(property "Reference" "R30"
-			(at 114.3 77.47 90)
+			(at 114.3 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7585,7 +7597,7 @@
 			)
 		)
 		(property "Value" "470"
-			(at 114.3 80.01 90)
+			(at 114.3 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -5,8 +5,10 @@ constexpr uint8_t DAC_I_PIN = PA4;
 constexpr uint8_t DAC_Q_PIN = PA5;
 constexpr uint8_t ADC_I_PIN = PA0;
 constexpr uint8_t ADC_Q_PIN = PA1;
-constexpr uint8_t TX_CLOCK_PIN = PB6;
-constexpr uint8_t RX_CLOCK_PIN = PB7;
+constexpr uint8_t TX_CLOCK_PIN = D8;
+constexpr uint8_t RX_CLOCK_PIN = D9;
+constexpr uint8_t TX_MODE_PIN = PB1;
+constexpr uint8_t RX_MODE_PIN = PB2;
 constexpr uint8_t USER_BUTTON_PIN = PC13;
 constexpr uint16_t DAC_MAX = 4095;
 constexpr uint32_t SYMBOL_PERIOD_US = 1000;
@@ -74,7 +76,7 @@ void printModulationInfo() {
   Serial.println(2 * modulation.bitsPerAxis);
   Serial.println("DAC pins: I=PA4, Q=PA5, range=0..4095");
   Serial.println("ADC pins: I=PA0, Q=PA1");
-  Serial.println("Clock pins: TX=PB6, RX=PB7");
+  Serial.println("Clock pins: TX=D8, RX=D9");
   Serial.println("RX samples ADC values on each rising clock edge.");
   Serial.println("Short press: next modulation. Hold 1.5 s: toggle TX/RX.");
 }
@@ -94,6 +96,8 @@ void receiveClockEdge() {
 void setMode(bool newReceiverMode) {
   receiverMode = newReceiverMode;
   symbolIndex = 0;
+  digitalWrite(TX_MODE_PIN, receiverMode ? LOW : HIGH);
+  digitalWrite(RX_MODE_PIN, receiverMode ? HIGH : LOW);
   noInterrupts();
   rxBufferHead = 0;
   rxBufferTail = 0;
@@ -233,6 +237,8 @@ void setup() {
   pinMode(DAC_Q_PIN, OUTPUT);
   pinMode(ADC_I_PIN, INPUT_ANALOG);
   pinMode(ADC_Q_PIN, INPUT_ANALOG);
+  pinMode(TX_MODE_PIN, OUTPUT);
+  pinMode(RX_MODE_PIN, OUTPUT);
   pinMode(USER_BUTTON_PIN, INPUT_PULLUP);
   pinMode(RX_CLOCK_PIN, INPUT);
   stableButtonState = digitalRead(USER_BUTTON_PIN);
@@ -240,6 +246,8 @@ void setup() {
   buttonStateChangedAt = millis();
   analogWriteResolution(12);
   analogReadResolution(12);
+  digitalWrite(TX_MODE_PIN, HIGH);
+  digitalWrite(RX_MODE_PIN, LOW);
 
   txClockTimer = new HardwareTimer(TIM4);
   txClockTimer->setOverflow(CLOCK_FREQUENCY_HZ, HERTZ_FORMAT);

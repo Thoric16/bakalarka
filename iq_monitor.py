@@ -183,8 +183,10 @@ class IQMonitor(tk.Tk):
             if not port or not port.is_open:
                 return
             try:
-                data = port.read(port.in_waiting or 1)
-            except serial.SerialException:
+                waiting = port.in_waiting
+                read_size = waiting if isinstance(waiting, int) and waiting > 0 else 1
+                data = port.read(read_size)
+            except (OSError, TypeError, serial.SerialException):
                 return
             for sample in self.parser.feed(data):
                 self.sample_queue.put(sample)
