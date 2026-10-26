@@ -4,6 +4,7 @@
 constexpr uint8_t ADC_I_PIN = PA0;
 constexpr uint8_t ADC_Q_PIN = PA1;
 constexpr uint8_t ADC_ENABLE_PIN = PC9;
+constexpr uint8_t CLOCK_INPUT_PIN = D9;
 constexpr uint16_t ADC_I_RAW_AT_NEGATIVE_MV = 3208;
 constexpr uint16_t ADC_I_RAW_AT_POSITIVE_MV = 452;
 constexpr uint16_t ADC_Q_RAW_AT_NEGATIVE_MV = 3270;
@@ -16,10 +17,8 @@ constexpr float ADC_Q_POSITIVE_MV = 154.0f;
 // The first implementation uses blocking analogRead() sampling. One centered
 // sample per symbol and a slow rate provide timing margin before DMA/timer
 // sampling is introduced.
-constexpr uint32_t SYMBOL_RATE = 50;
 constexpr uint8_t SAMPLES_PER_SYMBOL = 1;
-constexpr uint32_t SAMPLE_RATE = SYMBOL_RATE * SAMPLES_PER_SYMBOL;
-constexpr uint32_t SAMPLE_US = 1000000UL / SAMPLE_RATE;
+constexpr uint32_t DEFAULT_SYMBOL_RATE = 50;
 constexpr uint8_t PAYLOAD_LIMIT = 128;
 constexpr int16_t LEVEL_THRESHOLD_MV = 25;
 constexpr uint8_t AGC_SYMBOLS = 128;
@@ -40,6 +39,8 @@ uint16_t failureIndex = 0;
 uint8_t failureExpected = 0;
 uint8_t failureReceived = 0;
 uint32_t signalTimeoutUs = DEFAULT_SIGNAL_TIMEOUT_US;
+uint32_t symbolRate = DEFAULT_SYMBOL_RATE;
+bool externalClockEnabled = false;
 int16_t lastSignalI = 0;
 int16_t lastSignalQ = 0;
 
@@ -88,10 +89,29 @@ uint8_t readSymbol() {
   int32_t sumI = 0;
   int32_t sumQ = 0;
   for (uint8_t sample = 0; sample < SAMPLES_PER_SYMBOL; ++sample) {
+    if (externalClockEnabled) {
+      const uint32_t start = micros();
+      while (digitalRead(CLOCK_INPUT_PIN) == HIGH) {
+        if (micros() - start >= signalTimeoutUs) {
+          lastFailure = "clock_timeout";
+          return 0;
+        }
+      }
+      const uint32_t edgeStart = micros();
+      while (digitalRead(CLOCK_INPUT_PIN) == LOW) {
+        if (micros() - edgeStart >= signalTimeoutUs) {
+          lastFailure = "clock_timeout";
+          return 0;
+        }
+      }
+    }
     const uint32_t start = micros();
     sumI += readI();
     sumQ += readQ();
-    while (static_cast<int32_t>(micros() - start) < static_cast<int32_t>(SAMPLE_US)) {
+    const uint32_t sampleUs = 1000000UL / symbolRate;
+    while (!externalClockEnabled &&
+           static_cast<int32_t>(micros() - start) <
+               static_cast<int32_t>(sampleUs)) {
     }
   }
   const uint8_t symbol = classify(static_cast<int16_t>(sumI / SAMPLES_PER_SYMBOL),
@@ -130,11 +150,13 @@ bool waitForSignal() {
   uint8_t stableSamples = 0;
   while (!signalPresent()) {
     stableSamples = 0;
-    delayMicroseconds(SAMPLE_US);
+    if (!externalClockEnabled)
+      delayMicroseconds(1000000UL / symbolRate);
     if (micros() - start >= signalTimeoutUs) return false;
   }
   while (stableSamples < 3) {
-    delayMicroseconds(SAMPLE_US);
+    if (!externalClockEnabled)
+      delayMicroseconds(1000000UL / symbolRate);
     if (signalPresent()) {
       ++stableSamples;
     } else {
@@ -142,7 +164,8 @@ bool waitForSignal() {
     }
     if (micros() - start >= signalTimeoutUs) return false;
   }
-  delayMicroseconds(SAMPLE_US / 2);
+  if (!externalClockEnabled)
+    delayMicroseconds(500000UL / symbolRate);
   return true;
 }
 
@@ -200,8 +223,8 @@ bool receiveFrame(uint8_t *payload, uint8_t &length, uint16_t &sequence,
   const uint16_t payloadLength =
       static_cast<uint16_t>(header[8] | (header[9] << 8));
   if (header[0] != 1 || header[5] != 0 || payloadLength > PAYLOAD_LIMIT ||
-      header[10] != (SYMBOL_RATE & 0xFF) ||
-      header[11] != (SYMBOL_RATE >> 8)) {
+      header[10] != (symbolRate & 0xFF) ||
+      header[11] != (symbolRate >> 8)) {
     lastFailure = "header";
     if (debugEnabled) {
       Serial.print("RAW_HEADER data=");
@@ -255,7 +278,11 @@ void printDebugSettings() {
   Serial.print(" raw_symbols=");
   Serial.print(rawTraceEnabled ? 1 : 0);
   Serial.print(" timeout_ms=");
-  Serial.println(signalTimeoutUs / 1000);
+  Serial.print(signalTimeoutUs / 1000);
+  Serial.print(" rate=");
+  Serial.print(symbolRate);
+  Serial.print(" clock=");
+  Serial.println(externalClockEnabled ? "external" : "internal");
 }
 
 void processCommand() {
@@ -269,6 +296,18 @@ void processCommand() {
   else if (command == "DEBUG?") {
     printDebugSettings();
     return;
+  } else if (command == "CLOCK EXTERNAL") {
+    externalClockEnabled = true;
+    pinMode(CLOCK_INPUT_PIN, INPUT);
+  } else if (command == "CLOCK INTERNAL") {
+    externalClockEnabled = false;
+  } else if (command.startsWith("RATE ")) {
+    const long requestedRate = command.substring(5).toInt();
+    if (requestedRate < 1 || requestedRate > 1000) {
+      Serial.println("RX_CMD rate_hz=1..1000");
+      return;
+    }
+    symbolRate = static_cast<uint32_t>(requestedRate);
   } else if (command.startsWith("TIMEOUT ")) {
     const long timeoutSeconds = command.substring(8).toInt();
     if (timeoutSeconds < 1 || timeoutSeconds > 300) {
@@ -278,7 +317,8 @@ void processCommand() {
     signalTimeoutUs = static_cast<uint32_t>(timeoutSeconds) * 1000000UL;
   } else {
     Serial.println(
-        "RX_CMD use=DEBUG ON|DEBUG OFF|RAW ON|RAW OFF|DEBUG?|TIMEOUT <seconds>");
+        "RX_CMD use=DEBUG ON|DEBUG OFF|RAW ON|RAW OFF|DEBUG?|TIMEOUT <seconds>|"
+        "RATE <hz>|CLOCK INTERNAL|CLOCK EXTERNAL");
     return;
   }
   printDebugSettings();
@@ -289,9 +329,10 @@ void setup() {
   digitalWrite(ADC_ENABLE_PIN, HIGH);
   pinMode(ADC_I_PIN, INPUT_ANALOG);
   pinMode(ADC_Q_PIN, INPUT_ANALOG);
+  pinMode(CLOCK_INPUT_PIN, INPUT);
   analogReadResolution(12);
   Serial.begin(115200);
-  Serial.println("RX_READY symbol_rate=50 samples_per_symbol=1 debug=1");
+  Serial.println("RX_READY symbol_rate=50 samples_per_symbol=1 clock=internal debug=1");
 }
 
 void loop() {

@@ -28,6 +28,8 @@ class RxGui(tk.Tk):
         self.lines: queue.Queue[str] = queue.Queue()
         self.port_var = tk.StringVar()
         self.status_var = tk.StringVar(value="Disconnected")
+        self.rate_var = tk.StringVar(value="50")
+        self.clock_var = tk.StringVar(value="INTERNAL")
         self.debug_var = tk.BooleanVar(value=True)
         self.raw_var = tk.BooleanVar(value=True)
         self._build_ui()
@@ -49,6 +51,15 @@ class RxGui(tk.Tk):
         )
         self.connect_button.pack(side=tk.LEFT, padx=(5, 15))
         ttk.Label(controls, textvariable=self.status_var).pack(side=tk.LEFT)
+        ttk.Label(controls, text="Symbol rate:").pack(side=tk.LEFT, padx=(15, 2))
+        ttk.Entry(controls, textvariable=self.rate_var, width=7).pack(side=tk.LEFT)
+        ttk.Button(controls, text="Set", command=self._set_rate).pack(side=tk.LEFT, padx=2)
+        ttk.Label(controls, text="Clock:").pack(side=tk.LEFT, padx=(8, 2))
+        ttk.Combobox(
+            controls, textvariable=self.clock_var, values=("INTERNAL", "EXTERNAL"),
+            state="readonly", width=9,
+        ).pack(side=tk.LEFT)
+        ttk.Button(controls, text="Apply", command=self._set_clock).pack(side=tk.LEFT, padx=2)
         ttk.Checkbutton(
             controls, text="Firmware debug", variable=self.debug_var,
             command=self._send_debug_setting,
@@ -103,6 +114,8 @@ class RxGui(tk.Tk):
         self.reader_thread.start()
         port.write(b"DEBUG ON\n")
         port.write(b"RAW ON\n")
+        port.write(f"RATE {self.rate_var.get()}\n".encode("ascii"))
+        port.write(f"CLOCK {self.clock_var.get()}\n".encode("ascii"))
         self.connect_button.configure(text="Disconnect")
         self.status_var.set(f"Connected at {BAUD_RATE} baud")
 
@@ -192,6 +205,22 @@ class RxGui(tk.Tk):
                 self.serial_port.write(command)
             except serial.SerialException:
                 self.disconnect()
+
+    def _set_rate(self) -> None:
+        try:
+            rate = int(self.rate_var.get())
+        except ValueError:
+            messagebox.showwarning("Invalid symbol rate", "Enter an integer from 1 to 1000.")
+            return
+        if not 1 <= rate <= 1000:
+            messagebox.showwarning("Invalid symbol rate", "Enter an integer from 1 to 1000.")
+            return
+        if self.serial_port and self.serial_port.is_open:
+            self.serial_port.write(f"RATE {rate}\n".encode("ascii"))
+
+    def _set_clock(self) -> None:
+        if self.serial_port and self.serial_port.is_open:
+            self.serial_port.write(f"CLOCK {self.clock_var.get()}\n".encode("ascii"))
 
     def _append_log(self, line: str) -> None:
         self.log.configure(state=tk.NORMAL)

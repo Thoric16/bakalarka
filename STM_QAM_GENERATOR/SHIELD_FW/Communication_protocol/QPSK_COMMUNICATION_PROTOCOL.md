@@ -281,6 +281,37 @@ periodic `CLOCK_TRAIN` frame or a pilot section to every long `DATA` transfer.
 For the initial test, one synchronization sequence per frame is simpler and
 more observable.
 
+### Optional physical symbol clock
+
+For a hardware-clock experiment, connect the boards as follows:
+
+```text
+TX Nucleo D8 (CLK OUT)  ─────►  RX Nucleo D9 (CLK IN)
+TX GND                   ─────►  RX GND
+```
+
+The TX firmware emits one short D8 pulse for each transmitted QPSK symbol.
+This does not change the packet bytes or frame structure. The RX firmware can
+sample either from its local timing loop or on rising edges observed at D9.
+
+Select the mode through the RX serial interface:
+
+```text
+CLOCK INTERNAL
+CLOCK EXTERNAL
+RATE 50
+```
+
+The TX rate must be set to the same value:
+
+```text
+RATE 50
+```
+
+The Python RX GUI exposes the clock mode and rate controls. The TX GUI exposes
+the rate control. Use a common ground and verify that the clock signal is
+within the receiving GPIO voltage limits before enabling external-clock mode.
+
 ## 8. Initial test sequence
 
 ### Test 1: constellation and analog path
@@ -354,4 +385,3 @@ Possible later extensions are:
 - full-duplex operation;
 - a shared hardware reference clock;
 - authenticated frames if the link is used outside laboratory testing.
-

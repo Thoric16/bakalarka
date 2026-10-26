@@ -27,6 +27,7 @@ class TxGui(tk.Tk):
         self.lines: queue.Queue[str] = queue.Queue()
         self.port_var = tk.StringVar()
         self.status_var = tk.StringVar(value="Disconnected")
+        self.rate_var = tk.StringVar(value="50")
         self.message_var = tk.StringVar()
         self._build_ui()
         self.refresh_ports()
@@ -47,6 +48,9 @@ class TxGui(tk.Tk):
         )
         self.connect_button.pack(side=tk.LEFT, padx=(5, 15))
         ttk.Label(controls, textvariable=self.status_var).pack(side=tk.LEFT)
+        ttk.Label(controls, text="Symbol rate:").pack(side=tk.LEFT, padx=(15, 2))
+        ttk.Entry(controls, textvariable=self.rate_var, width=7).pack(side=tk.LEFT)
+        ttk.Button(controls, text="Set", command=self._set_rate).pack(side=tk.LEFT, padx=2)
 
         editor = ttk.LabelFrame(self, text="Message", padding=12)
         editor.pack(fill=tk.X, padx=8, pady=8)
@@ -114,6 +118,22 @@ class TxGui(tk.Tk):
             return
         self._append_log(f"TX request: {message}")
         self.message_var.set("")
+
+    def _set_rate(self) -> None:
+        try:
+            rate = int(self.rate_var.get())
+        except ValueError:
+            messagebox.showwarning("Invalid symbol rate", "Enter an integer from 1 to 1000.")
+            return
+        if not 1 <= rate <= 1000:
+            messagebox.showwarning("Invalid symbol rate", "Enter an integer from 1 to 1000.")
+            return
+        if self.serial_port and self.serial_port.is_open:
+            try:
+                self.serial_port.write(f"RATE {rate}\n".encode("ascii"))
+            except serial.SerialException as error:
+                self.disconnect()
+                messagebox.showerror("Rate update failed", str(error))
 
     def _read_serial(self, port: serial.Serial) -> None:
         while not self.stop_event.is_set():
